@@ -1,0 +1,12 @@
+minimum_pre_commit_version: "3.2.0"
+
+repos:
+  - repo: local
+    hooks:
+      - id: commit-message-format
+        name: Validate commit message format
+        entry: python utils/check_commit_message.py
+        language: system
+        stages: [commit-msg]
+        pass_filenames: true
+
